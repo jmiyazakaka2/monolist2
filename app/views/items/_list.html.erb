@@ -5,7 +5,7 @@
         <div class="image">
           <div class="img-wrap">
             <% if item.large_image.present? %>
-              <%= image_tag(item.large_image , alt: item.title) %>
+              <%= link_to image_tag(item.large_image , alt: item.title), item.detail_page_url %>
             <% else %>
               <%= image_tag("no-image.png" , alt: item.title) %>
             <% end %>
