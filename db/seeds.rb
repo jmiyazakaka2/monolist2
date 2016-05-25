@@ -53,3 +53,17 @@ user4.follow(user1)
 user4.follow(user2)
 user4.follow(user3)
 
+item_ids = [1, 2, 3, 4, 5]
+1.upto(12) do |user_id|
+  item_ids.each do |item_id|
+    eval("user#{user_id}").have(Item.find(item_id))
+  end
+  item_ids.pop
+end
+user13.have(Item.find(3))
+
+# 1位(12票):パーフェクトRuby　on　Rails
+# 2位(11票):Ruby　on　Rails　4アプリケーションプログラミング
+# 3位(10票):基礎Ruby　on　Rails改訂3版 [ 黒田努 ]
+# 4位(9票):Bootstrapファーストガイド [ 相澤裕介 ]
+# 4位(9票):はじめてのBootstrap [ 槇俊明 ]

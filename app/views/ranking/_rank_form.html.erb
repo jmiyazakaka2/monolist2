@@ -1,0 +1,25 @@
+<% ranking_ary.each do |item|%>
+  <% if item[item_data] != nil %>
+    <div class="ranking-item-box" align="center">
+      <div class="rank">
+        <h3 class="title">
+          <%= "#{item[ranking]}位(#{item[count]})" %>
+        </h3>
+      </div>
+      <div class="image">
+        <div class="img-wrap">
+          <% if item[item_data].large_image.present? %>
+            <%= link_to image_tag(item[item_data].large_image, :width => '256', :hight => '512', alt: item[item_data].title), item_url(id: item[item_data].id) %>
+          <% else %>
+            <%= link_to image_tag("no-image.png" , alt: item.title), item_url(id: item.id) %>
+          <% end %>
+        </div>
+      </div>
+      <div class="detail">
+        <p class="title">
+          <%= item[item_data].title %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
